@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Balloon</title>
+		<style>
+			#balloon {
+				display: block;
+				border-radius: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function inflate() {
+				var color;
+				var size;
+
+				color = document.getElementById('balloon').style.background;
+				size = document.getElementById('balloon').clientHeight;
+				if (color == 'red')
+					document.getElementById('balloon').style.background='green';
+				if (color == 'green')
+					document.getElementById('balloon').style.background='blue';
+				if (color == 'blue')
+					document.getElementById('balloon').style.background='red';
+				if (size <= 410)
+					size = size + 10;
+				if (size == 420)
+					size = 200;
+				document.getElementById('balloon').style.height=size+'px';
+				document.getElementById('balloon').style.width=size+'px';
+			}
+
+			function deflate() {
+				var color;
+				var size;
+
+				color = document.getElementById('balloon').style.background;
+				size = document.getElementById('balloon').clientHeight;
+				if (color == 'red')
+					document.getElementById('balloon').style.background='blue';
+				if (color == 'blue')
+					document.getElementById('balloon').style.background='green';
+				if (color == 'green')
+					document.getElementById('balloon').style.background='red';
+				if (size > 205)
+					size = size - 5;
+				else
+					size = 200;
+				document.getElementById('balloon').style.height=size+'px';
+				document.getElementById('balloon').style.width=size+'px';
+			}
+		</script>
+		<span onclick="inflate();" onmouseout="deflate();" id="balloon" style="background:red;width:200px;height:200px"></span>
+	</body>
+</html>
