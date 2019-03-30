@@ -19,7 +19,7 @@ function calculate() {
 	if (left < 0 || right < 0 || !Number.isInteger(left) || !Number.isInteger(right)) {
 		alert('Error :(');
 		console.log('Error :(');
-		return ;
+		return (false);
 	}
 	operator = document.getElementById("operator").value;
 	if (operator == "plus")
@@ -33,7 +33,7 @@ function calculate() {
 		if (right == 0) {
 			alert("It's over 9000!");
 			console.log("It's over 9000!");
-			return ;
+			return (false);
 		}
 		result = left / right;
 	}
@@ -48,6 +48,7 @@ function calculate() {
 	}
 	alert(result);
 	console.log(result);
+	return (false);
 }
 		</script>
 		<form>
@@ -59,7 +60,7 @@ function calculate() {
 				<option value="div">/</option>
 				<option value="mod">%</option>
 				<input id="right" type="text" name="right" value="">
-				<input onmousedown="calculate();" id="btn" type="submit" name="submit" value="Try me!">
+				<input onclick=" return (calculate());" id="btn" type="submit" name="submit" value="Try me!">
 		</form>
 	</body>
 </html>

@@ -10,7 +10,7 @@
 $(document).ready(function(){
 setInterval(function() {alert('Please, use me...')}, 30000);
 
-	$('#btn').mousedown(function calculate() {
+	$('#btn').click(function calculate() {
 	var left;
 	var right;
 	var operator;
@@ -21,7 +21,7 @@ setInterval(function() {alert('Please, use me...')}, 30000);
 	if (left < 0 || right < 0 || !Number.isInteger(left) || !Number.isInteger(right)) {
 		alert('Error :(');
 		console.log('Error :(');
-		return ;
+		return false;
 	}
 	operator = $('#operator').val();
 	if (operator == "plus")
@@ -35,7 +35,7 @@ setInterval(function() {alert('Please, use me...')}, 30000);
 		if (right == 0) {
 			alert("It's over 9000!");
 			console.log("It's over 9000!");
-			return ;
+			return false;
 		}
 		result = left / right;
 	}
@@ -44,12 +44,13 @@ setInterval(function() {alert('Please, use me...')}, 30000);
 		if (right == 0) {
 			alert("It's over 9000!");
 			console.log("It's over 9000!");
-			return ;
+			return false;
 		}
 		result = left % right;
 	}
 	alert(result);
 	console.log(result);
+	return false;
 })
 })
 		</script>
