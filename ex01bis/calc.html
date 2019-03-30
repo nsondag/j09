@@ -11,14 +11,17 @@ $(document).ready(function(){
 setInterval(function() {alert('Please, use me...')}, 30000);
 
 	$('#btn').click(function calculate() {
-	var left;
-	var right;
 	var operator;
 	var result;
 
-	left = parseInt($('#left').val());
-	right = parseInt($('#right').val());
-	if (left < 0 || right < 0 || !Number.isInteger(left) || !Number.isInteger(right)) {
+	var left = parseInt($('#left').val());
+	var right = parseInt($('#right').val());
+	var l1 = $('#left').val();
+	var r1 = $('#right').val();
+	var l2 = String(left);
+	var r2 = String(right);
+
+	if (left < 0 || right < 0 || l1 != l2 || r1 != r2) {
 		alert('Error :(');
 		console.log('Error :(');
 		return false;

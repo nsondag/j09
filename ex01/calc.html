@@ -9,14 +9,16 @@
 setInterval(function() {alert('Please, use me...')}, 30000);
 
 function calculate() {
-	var left;
-	var right;
 	var operator;
 	var result;
+	var l1string = document.getElementById("left").value;
+	var r1string = document.getElementById("right").value;
+	var left = parseInt(document.getElementById("left").value);
+	var right = parseInt(document.getElementById("right").value);
+	var l2string = String(left);
+	var r2string = String(right);
 
-	left = parseInt(document.getElementById("left").value);
-	right = parseInt(document.getElementById("right").value);
-	if (left < 0 || right < 0 || !Number.isInteger(left) || !Number.isInteger(right)) {
+	if (left < 0 || right < 0 || l1string != l2string || r1string != r2string) {
 		alert('Error :(');
 		console.log('Error :(');
 		return (false);
