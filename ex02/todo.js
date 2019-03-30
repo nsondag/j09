@@ -6,6 +6,9 @@ function add() {
 		var new_elem = document.createElement('div');
 		new_elem.appendChild(task_node);
 		my_todo.insertBefore(new_elem, my_todo.childNodes[0]);
+		document.cookie = "cookie" + "=" + task;
+		var cookie = document.cookie;
+		console.log(cookie);
 	var listItems = my_todo.getElementsByTagName("div");
 	for (var i = 0; i < listItems.length; i++) {
  		 listItems[i].onclick = function remove() {
